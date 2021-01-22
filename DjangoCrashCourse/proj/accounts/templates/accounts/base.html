@@ -33,6 +33,9 @@
             </ul>
           </div>
         </div>
+
+        <span class="hello-msg">Hello, {{request.user}} </span>
+        <span ><a href="{%url 'logout'%}" class="hello-msg">Logout</a></span>
       </nav>
 
       {%block content%}
