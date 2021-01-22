@@ -13,10 +13,12 @@
                <a href="" class="btn btn-primary">Create Customer</a>
                 <table class="table">
                     <tr>
+                        <th></th>
                         <th>Customer</th>
                         <th>Phone</th>
                         {%for customer in customers%}
                         <tr>
+                            <td><a href="{%url 'customer' customer.id%}" class="btn btn-info">View</a></td>
                             <td>{{customer.name}} </td>
                             <td>{{customer.phone}} </td>
                         </tr>
@@ -29,7 +31,8 @@
             <h5>LAST 5 ORDERS</h5>
             <hr>
             <div class="card card-body">
-                <a href="" class="btn btn-primary">Create Order</a>
+          
+                <br>
                 <table class="table">
                     <tr>
                         <th>Product</th>
@@ -43,8 +46,8 @@
                         <td>{{order.product}} </td>
                         <td>{{order.date_created}} </td>
                         <td>{{order.status}} </td>
-                        <td><a href="" class="btn btn-warning">Update</a></td>
-                        <td><a href="" class="btn btn-danger">Update</a></td>
+                        <td><a href="{%url 'update_order' order.id%}" class="btn btn-warning">Update</a></td>
+                        <td><a href="{%url 'delete_order' order.id%}" class="btn btn-danger">Delete</a></td>
                     </tr>
                     {%endfor%}
                 </table>
